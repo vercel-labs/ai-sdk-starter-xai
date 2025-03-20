@@ -53,7 +53,7 @@ export const Header = () => {
               <Link
                 className="flex flex-row items-end gap-2"
                 target="_blank"
-                href="https://xai.com"
+                href="https://x.ai"
               >
                 <XAiIcon size={18} />
               </Link>

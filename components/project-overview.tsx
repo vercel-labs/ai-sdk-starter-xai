@@ -4,7 +4,7 @@ export const ProjectOverview = () => {
     <div className="flex flex-col items-center justify-end">
       <h1 className="text-3xl font-semibold mb-4">Vercel{" "}<span className="text-zinc-500">+</span>{" "}xAI Chatbot</h1>
       <p className="text-center">
-        This starter project uses <Link href="https://xai.com/">xAI</Link> with
+        This starter project uses <Link href="https://x.ai">xAI</Link> with
         the <Link href="https://sdk.vercel.ai/docs">AI SDK</Link> via the{" "}
         <Link href="https://vercel.com/marketplace/xai">
           Vercel Marketplace
