@@ -1,5 +1,5 @@
 <a href="https://ai-sdk-starter-xai.vercel.app">
-  <h1 align="center">Vercel x xAI Chatbot</h1>
+  <h1 align="center">Developed by Haseeb - Reposted , Changed features NEXT JS, React JS, TEST CODE</h1>
 </a>
 
 <p align="center">
