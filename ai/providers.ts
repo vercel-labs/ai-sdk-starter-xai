@@ -1,7 +1,9 @@
 import { createGateway } from "@ai-sdk/gateway";
 import { customProvider } from "ai";
 
-const gateway = createGateway();
+const gateway = createGateway({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+});
 
 const languageModels = {
   "grok-4": gateway("xai/grok-4"),
