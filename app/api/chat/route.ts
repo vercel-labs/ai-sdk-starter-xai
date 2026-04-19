@@ -1,11 +1,17 @@
 import { model, type modelID } from "@/ai/providers";
 import { weatherTool } from "@/ai/tools";
 import { convertToModelMessages, stepCountIs, streamText, UIMessage } from "ai";
+import { checkBotId } from "botid/server";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
+  const { isBot } = await checkBotId();
+  if (isBot) {
+    return new Response("Access denied", { status: 403 });
+  }
+
   const {
     messages,
     selectedModel,
@@ -14,7 +20,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: model.languageModel(selectedModel),
     system: "You are a helpful assistant.",
-    messages: convertToModelMessages(messages),
+    messages: await convertToModelMessages(messages),
     stopWhen: stepCountIs(5), // enable multi-step agentic flow
     tools: {
       getWeather: weatherTool,

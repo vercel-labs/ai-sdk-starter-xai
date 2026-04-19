@@ -1,13 +1,17 @@
-import { xai } from "@ai-sdk/xai";
+import { createGateway } from "@ai-sdk/gateway";
 import { customProvider } from "ai";
 
+const gateway = createGateway({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+});
+
 const languageModels = {
-  "grok-4": xai("grok-4-latest"),
-  "grok-2-1212": xai("grok-2-1212"),
-  "grok-3": xai("grok-3-latest"),
-  "grok-3-fast": xai("grok-3-fast-latest"),
-  "grok-3-mini": xai("grok-3-mini-latest"),
-  "grok-3-mini-fast": xai("grok-3-mini-fast-latest"),
+  "grok-4": gateway("xai/grok-4"),
+  "grok-2-1212": gateway("xai/grok-3-mini-fast"),
+  "grok-3": gateway("xai/grok-3"),
+  "grok-3-fast": gateway("xai/grok-3-fast"),
+  "grok-3-mini": gateway("xai/grok-3-mini"),
+  "grok-3-mini-fast": gateway("xai/grok-3-mini-fast"),
 };
 
 export const model = customProvider({
